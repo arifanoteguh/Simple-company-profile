@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manakara Company Profile</title>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Overpass&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+      nav{
+          top: 10%;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Navbar -->
+    <nav class="transparent">
+      <div class="nav-wrapper white-text">
+        <a href="#!" class="brand-logo" style="margin-left: 10%;">Logo</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="produk.html">Produk</a></li>
+          <li><a href="portofolio.html">Portofolio</a></li>
+          <li><a href="layanan.html">Layanan</a></li>
+          <li><a href="mitra.html">Mitra</a></li>
+        </ul>
+      </div>
+    </nav>
+    
+    <ul class="sidenav" id="mobile-demo">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="produk.html">Produk</a></li>
+      <li><a href="portofolio.html">Portofolio</a></li>
+      <li><a href="layanan.html">Layanan</a></li>
+      <li><a href="mitra.html">Mitra</a></li>
+    </ul>
+    <!--  -->
+
+    <!-- Parallax1 -->
+    <div class="parallax-container dim-gelap" style="height: 100%;">
+      <div class="parallax"><img src="background.jpeg"></div>
+    </div>
+    <!-- EoParallax1 -->
+
+    <div class="sambungan"></div>
+
+   <!-- Content -->
+    <div class="konten">
+
+      <div class="container">
+        <div class="row" style="height: 100%;">
+          <div class="col s12 m12 grad-konten">
+            <div data-aos="fade-up">
+              <h4 class="header aos-init">Tentang Kami</h4>
+              <hr class=" aos-init" style="width: 40%; float: left; margin-left: -1.5%;"><br>
+              <div class="callTxt aos-init" id="tkDiv">
+                <p class="grey-text text-darken-3 lighten-3" id="tkTxt"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row" style="height: 100%;">
+          <div class="col s12 m12 grad-konten">
+            <div data-aos="fade-up">
+              <h4 class="header aos-init">Visi Misi</h4>
+              <hr class=" aos-init"  style="width: 40%; float: left; margin-left: -1.5%;"><br>
+              <div class="callTxt aos-init" id="vmDiv">
+                <p class="grey-text text-darken-3 lighten-3" id="vmTxt"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row" style="height: 100%;">
+          <div class="col s12 m12 grad-konten">
+            <div data-aos="fade-up">
+              <h4 class="header aos-init">Sejarah</h4>
+              <hr class=" aos-init"  style="width: 40%; float: left; margin-left: -1.5%;"><br>
+              <div class="callTxt aos-init" id="sejDiv">
+                <p class="grey-text text-darken-3 lighten-3" id="sejTxt"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- EoContent -->
+
+
+    <div class="sambungan-2"></div>
+
+    <!-- Footer -->
+    <footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12 aos-init" data-aos="fade-up">
+            <h5 class="white-text">Kontak Kami</h5>
+            <p class="grey-text text-lighten-4">
+              <ul>
+                <li>Phone : +62</li>
+                <li>WhatsApp : +62</li>
+                <li>Email : </li>
+              </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+        © 2020 Copyright Text
+        <a class="grey-text text-lighten-4 right" href="#!"></a>
+        </div>
+      </div>
+    </footer>
+    <!-- EoFooter -->
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+      AOS.init();
+    </script>
+
+    <script>
+      $(document).ready(function(){
+        $('.sidenav').sidenav();
+      });
+
+      $(document).ready(function(){
+        $('.parallax').parallax();
+      });
+
+      // Load txt Tentang Kami
+      $('#tkDiv').load("tentang_kami.txt");
+      $('#tkTxt').html($('#tkDiv').find('#theParagraphId').html());
+
+      // Load txt Sejarah
+      $('#sejDiv').load("sejarah.txt");
+      $('#sejTxt').html($('#sejDiv').find('#theParagraphId').html());
+
+      // Load txt Visi Misi
+      $('#vmDiv').load("visimisi.txt");
+      $('#vmTxt').html($('#vmDiv').find('#theParagraphId').html());
+
+
+
+      $(document).ready(function () {
+        $('.carousel').carousel();
+        $('.carousel.carousel-slider').carousel({ fullWidth: true });
+        $('.slide-prev').click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            $('.carousel').carousel('prev')
+        });
+        $('.slide-next').click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            $('.carousel').carousel('next')
+        });
+    });
+    </script>
+  </body>
+</html>
